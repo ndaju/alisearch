@@ -1,0 +1,63 @@
+use_default_settings: true
+
+general:
+  instance_name: "AliSearch"
+
+search:
+  formats:
+    - html
+    - json
+
+server:
+  secret_key: "alisearch-secret-key-change-in-production"
+  limiter: false
+  image_proxy: false
+
+engines:
+  - name: duckduckgo
+    disabled: true
+
+  - name: google
+    engine: google
+    shortcut: g
+    disabled: false
+
+  - name: bing
+    engine: bing
+    shortcut: bi
+    disabled: false
+
+  - name: google images
+    engine: google_images
+    shortcut: gi
+    disabled: false
+
+  - name: bing images
+    engine: bing_images
+    shortcut: bii
+    disabled: false
+
+  - name: google videos
+    engine: google_videos
+    shortcut: gv
+    disabled: false
+
+  - name: bing videos
+    engine: bing_videos
+    shortcut: biv
+    disabled: false
+
+  - name: google news
+    engine: google_news
+    shortcut: gn
+    disabled: false
+
+  - name: bing news
+    engine: bing_news
+    shortcut: bin
+    disabled: false
+
+  - name: wikipedia
+    engine: wikipedia
+    shortcut: wp
+    disabled: false
