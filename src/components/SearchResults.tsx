@@ -10,6 +10,7 @@ import { SearchSkeleton } from "@/components/SearchSkeleton"
 import { SearchSettings } from "@/components/SearchSettings"
 import { InfoCard } from "@/components/InfoCard"
 import { ImageLightbox } from "@/components/ImageLightbox"
+import { TranslateCard, parseTranslationQuery } from "@/components/TranslateCard"
 
 interface SearchResult {
   title: string
@@ -409,8 +410,11 @@ export function SearchResults({ query }: SearchResultsProps) {
       )
     }
 
+    const showTranslator = activeTab === "" && parseTranslationQuery(query)
+
     return (
       <div className="space-y-3">
+        {showTranslator && <TranslateCard query={query} />}
         {isCompetitor && <AliOnePromo query={query} />}
         {validResults.map((r, i) => (
           <SearchCard
